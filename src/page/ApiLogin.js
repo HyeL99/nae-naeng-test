@@ -5,16 +5,16 @@ import { useNavigate } from "react-router-dom";
 import FaceImage from "../image/face.png";
 import MainText from "../image/main-text.png";
 
+window.localStorage.removeItem("user_id")
+
 const ApiLogin = ({ setAuthenticate }) => {
   const clientId =
     "349163810320-i194g22jcpt6jk7i7f6lublu2qto71jb.apps.googleusercontent.com";
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
   const [userEmail, setUserEmail] = useState(""); //구글에서 받아온 이메일 저장 용도
   const [emailState, setEmailState] = useState("none"); //받아온 이메일 확인용
-
-  const email = useSelector((state) => state.email);
 
   const responseGoogle = async (response) => {
     window.localStorage.setItem("user_id", response.googleId);
@@ -23,7 +23,7 @@ const ApiLogin = ({ setAuthenticate }) => {
     setAuthenticate(true);
     setUserEmail(localStorage?.getItem("user_email"));
     await setUserStatus();
-    await setEmailState(email);
+    await setEmailState(response.profileObj.email);
     navigate("/");
   };
   const logout = () => {
