@@ -9,7 +9,7 @@ window.localStorage.removeItem("user_id")
 
 const ApiLogin = ({ setAuthenticate }) => {
   const clientId =
-    "349163810320-i194g22jcpt6jk7i7f6lublu2qto71jb.apps.googleusercontent.com";
+    "349163810320-ued58utir8d67ftiehejp8ukh1hdjeta.apps.googleusercontent.com";
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
