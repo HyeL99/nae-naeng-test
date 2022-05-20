@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import FaceImage from "../image/face.png"
 import MainText from "../image/main-text.png"
 

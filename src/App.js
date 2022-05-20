@@ -1,18 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import  'bootstrap/dist/css/bootstrap.min.css' ;
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Login from './page/Login';
+//import Login from './page/Login';
+import ApiLogin from './page/ApiLogin';
+import { useState } from 'react';
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false)
   return (
     <div>
       <NavBar />
-      <Login />
-      {/*<Routes>
-        <Route path='/' element={} />
-  </Routes>*/}
+      {<Routes>
+        <Route path='/' element={<ApiLogin setAuthenticate={setAuthenticate}/>} />
+      </Routes>}
     </div>
   );
 }
